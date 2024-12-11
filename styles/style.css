@@ -12,5 +12,39 @@
 
 .page {
   min-inline-size: 320px;
+  max-inline-size: 700px;
   min-block-size: 100dvb;
+  font-family: var(--main-font, monospace, sans-serif);
+  font-variation-settings: 'wght' var(--font-weight-regular, 400);
+  color: var(--text-color, #000000);
+  background-color: var(--bg-color, #FFFFFF);
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  inline-size: 100vw;
+  block-size: 327px;
+  background-color: var(--bg-color, #FFFFFF);
+  font-family: var(--accent-font, monospace, sans-serif);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  border: solid 2px #000000;
+  margin-block-start: 100px;
+  margin-block-end: 102px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
 }
