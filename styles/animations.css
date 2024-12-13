@@ -1,11 +1,60 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+  to {
+    transform: scale(1.25);
+  }
+}
 
-*/
+@keyframes sparking {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disco {
+  to {
+    filter: hue-rotate(360deg) saturate(500%) brightness(150%);
+  }
+}
+
+@keyframes dancing {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.like-icon.is-liked .whole-heart {
+  animation: heartbeat 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .contour {
+  --heart-contour-color: #FF0000;
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .core {
+  --heart-core-color: #FF0000;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .heart-body {
+  --heart-body-color: #FF0000;
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparking 0.3s ease-in 0.3s 1;
+}
