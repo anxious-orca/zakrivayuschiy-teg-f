@@ -94,7 +94,7 @@
 }
 
 .kratos {
-  filter: saturate(200%) opacity(1%);
+  filter: saturate(200%) opacity(99%);
 }
 
 .kratos:hover {
@@ -246,10 +246,7 @@
 
 .insert-floppy {
   position: fixed;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, auto));
-  grid-template-rows: repeat(2, minmax(min-content, auto));
-  gap: 20px;
+  inset: 0;
   max-inline-size: 353px;
   border: solid 2px var(--primary-color, #000000);
   padding: 30px 42px;
@@ -258,12 +255,16 @@
   text-transform: uppercase;
   line-height: 1.5;
   background-color: var(--bg-color, #FFFFFF);
-  transition: transform 1s ease-in-out;
-  transform: translateY(1000%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, auto));
+  grid-template-rows: repeat(2, minmax(min-content, auto));
+  gap: 20px;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.insert-floppy[open] {
-  transform: translateY(0%);
+.insert-floppy:not([open]) {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .insert-floppy[open]::backdrop {
