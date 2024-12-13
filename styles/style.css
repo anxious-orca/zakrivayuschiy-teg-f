@@ -94,7 +94,7 @@
 }
 
 .kratos {
-  filter: saturate(200%);
+  filter: saturate(200%) opacity(1%);
 }
 
 .kratos:hover {
@@ -115,7 +115,7 @@
 }
 
 @media (prefers-reduced-motion) {
-  .minion:hover  {
+  .minion:hover {
     animation: none;
   }
 }
@@ -133,13 +133,17 @@
   transition: filter 2s linear;
 }
 
-.jim:hover {
+.jim {
   filter: blur(10px);
-  transition: filter 10s linear;
+}
+
+.jim:hover {
+  filter: blur(0px);
+  transition: filter 3s linear;
 }
 
 .office {
-  filter: saturate(150%);
+  filter: saturate(150%) brightness(110%);
 }
 
 .card__content {
@@ -217,7 +221,7 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: solid 2px var(--primary-color, #000000); 
+  outline: solid 2px var(--primary-color, #000000);
 }
 
 .card__like-button {
