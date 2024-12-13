@@ -94,7 +94,7 @@
 }
 
 .kratos {
-  filter: saturate(200%) opacity(99%);
+  filter: saturate(200%) opacity(100%);
 }
 
 .kratos:hover {
@@ -255,17 +255,20 @@
   text-transform: uppercase;
   line-height: 1.5;
   background-color: var(--bg-color, #FFFFFF);
+  /* transition: opacity 0.5s ease-in-out; */
+}
+
+.insert-floppy[open] {
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, auto));
   grid-template-rows: repeat(2, minmax(min-content, auto));
   gap: 20px;
-  transition: opacity 0.5s ease-in-out;
 }
 
-.insert-floppy:not([open]) {
+/* .insert-floppy:not([open]) {
   opacity: 0;
   pointer-events: none;
-}
+} */
 
 .insert-floppy[open]::backdrop {
   backdrop-filter: blur(5px);
