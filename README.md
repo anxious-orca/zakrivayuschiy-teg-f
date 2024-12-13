@@ -1,1 +1,1 @@
-https://github.com/anxious-orca/zakrivayuschiy-teg-f
+https://anxious-orca.github.io/zakrivayuschiy-teg-f/
