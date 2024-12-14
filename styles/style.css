@@ -223,7 +223,8 @@
 }
 
 .card__like-button {
-  padding: 10.5px 34.5px;
+  padding-block: 10.5px;
+  min-inline-size: 130px;
 }
 
 .insert-floppy-button_cmd_open {
