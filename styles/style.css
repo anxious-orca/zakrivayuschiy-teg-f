@@ -2,13 +2,11 @@
   min-inline-size: 375px;
   max-inline-size: 700px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, monospace, sans-serif);
+  font-family: var(--main-font, monospace), sans-serif;
   font-variation-settings: 'wght' var(--font-weight-regular, 400);
   color: var(--text-color, #000000);
   background-color: var(--bg-color, #FFFFFF);
   background-image: var(--bg-gradient);
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -16,7 +14,7 @@
 .header {
   inline-size: 100%;
   block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
-  font-family: var(--accent-font, monospace, sans-serif);
+  font-family: var(--accent-font, monospace), sans-serif;
   background-color: var(--bg-color, #FFFFFF);
   border: solid 2px var(--primary-color, #000000);
   display: flex;
@@ -60,10 +58,11 @@
 .card__overlay {
   position: relative;
   aspect-ratio: 1 / 1;
+  border-block: solid 2px var(--primary-color, #000000);
 }
 
 .card__overlay-label {
-  font-family: var(--accent-font, monospace, sans-serif);
+  font-family: var(--accent-font, monospace), sans-serif;
   font-size: var(--accent-font-size, 14px);
   paint-order: stroke fill;
   position: absolute;
@@ -93,70 +92,69 @@
   object-position: center;
 }
 
-.kratos {
+.img-filter-saturate-disapear {
   filter: saturate(200%) opacity(100%);
 }
 
-.kratos:hover {
+.img-filter-saturate-disapear:hover {
   filter: saturate(200%) opacity(0%);
   transition: filter 6s linear;
 }
 
-.cat-on-a-computer {
+.img-filter-contrast {
   filter: contrast(125%);
 }
 
-.walter-and-jesse {
+.img-filter-sepia {
   filter: sepia(60%);
 }
 
-.minion:hover {
+.party-animation:hover {
   animation: dancing 0.5s linear infinite alternate, disco 2s linear infinite;
 }
 
 @media (prefers-reduced-motion) {
-  .minion:hover {
+  .party-animation:hover {
     animation: none;
   }
 }
 
-.gosling {
+.img-filter-saturate {
   filter: saturate(150%);
 }
 
-.judge {
+.img-filter-grayscale-contrast-dark-to-bright {
   filter: grayscale(100%) contrast(200%) brightness(0%);
 }
 
-.judge:hover {
+.img-filter-grayscale-contrast-dark-to-bright:hover {
   filter: grayscale(100%) contrast(200%) brightness(100%);
   transition: filter 2s linear;
 }
 
-.jim {
+.img-filter-blur-to-focus {
   filter: blur(10px);
 }
 
-.jim:hover {
+.img-filter-blur-to-focus:hover {
   filter: blur(0px);
   transition: filter 3s linear;
 }
 
-.office {
+.img-filter-saturate-brightness {
   filter: saturate(150%) brightness(110%);
 }
 
 .card__content {
   padding: 25px;
   line-height: 1.167;
+  display: flex;
+  flex-direction: column;
+  gap: 25px
 }
 
-.card__content-stage {
-  padding-block-end: 27px;
-}
-
-.card__content-memory {
-  padding-block-end: 25px;
+.card__content .card__content-paragraph:not(:last-of-type) {
+  padding-block-end: 2px;
 }
 
 .card__buttons {
@@ -167,7 +165,7 @@
 }
 
 .button {
-  font-family: var(--accent-font, monospace, sans-serif);
+  font-family: var(--accent-font, monospace), sans-serif;
   font-size: var(--accent-font-size, 14px);
   line-height: 0.9;
   color: var(--secondary-color, #FFFFFF);
@@ -201,22 +199,22 @@
 }
 
 .card__icon-button:hover .heart-body {
-  --heart-body-color: #000000;
+  fill: var(--heart-color-main, #000000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:hover .core {
-  --heart-core-color: #000000;
+  fill: var(--heart-color-main, #000000);
   transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .heart-body {
-  --heart-body-color: #FF0000;
+  fill: var(--heart-color-accent, #FF0000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .core {
-  --heart-core-color: #FF0000;
+  fill: var(--heart-color-accent, #FF0000);
   transition: fill 0.3s linear;
 }
 
@@ -245,17 +243,14 @@
 }
 
 .insert-floppy {
-  position: fixed;
-  inset: 0;
   max-inline-size: 353px;
   border: solid 2px var(--primary-color, #000000);
   padding: 30px 42px;
-  font-family: var(--accent-font, monospace, sans-serif);
+  font-family: var(--accent-font, monospace), sans-serif;
   font-size: var(--accent-font-size, 14px);
   text-transform: uppercase;
   line-height: 1.5;
   background-color: var(--bg-color, #FFFFFF);
-  /* transition: opacity 0.5s ease-in-out; */
 }
 
 .insert-floppy[open] {
@@ -264,11 +259,6 @@
   grid-template-rows: repeat(2, minmax(min-content, auto));
   gap: 20px;
 }
-
-/* .insert-floppy:not([open]) {
-  opacity: 0;
-  pointer-events: none;
-} */
 
 .insert-floppy[open]::backdrop {
   backdrop-filter: blur(5px);

@@ -1,5 +1,5 @@
 :root {
-  --main-font: 'Inter';
+  --main-font: 'Inter-Variable';
   --accent-font: 'Press Start 2P';
   --maint-font-size: 18px;
   --accent-font-size: 14px;
@@ -13,8 +13,8 @@
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --primary-color: #000000;
   --secondary-color: #FFFFFF;
-  --heart-contour-color: #000000;
-  --heart-body-color: transparent;
-  --heart-core-color: transparent;
-  --heart-sparks-color: #FF0000;
+
+  --heart-color-default: transparent;
+  --heart-color-main: #000000;
+  --heart-color-accent: #FF0000;
 }

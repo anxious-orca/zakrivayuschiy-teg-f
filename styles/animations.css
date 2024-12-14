@@ -41,17 +41,17 @@
 }
 
 .like-icon.is-liked .contour {
-  --heart-contour-color: #FF0000;
+  fill: var(--heart-color-accent, #FF0000);
   transition: fill 0.3s 0.06s linear;
 }
 
 .like-icon.is-liked .core {
-  --heart-core-color: #FF0000;
+  fill: var(--heart-color-accent, #FF0000);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .heart-body {
-  --heart-body-color: #FF0000;
+  fill: var(--heart-color-accent, #FF0000);
   transition: fill 0.3s 0.05s linear;
 }
 
